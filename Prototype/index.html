@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"> 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">
+    <h1>🌤️ Météo d'aujourd'hui</h1>
+    <p>Conditions météorologiques de votre ville</p>
+  </div>
+  <div class="search-box">
+    <input type="text" id="ville" placeholder="Entrez le nom de la ville...">
+    <button id="btn">Météo</button>
+  </div>
+<section>
+
+  <div class="container">
+
+
+    <div class="weather-box" id="meteo"></div>
+    
+
+    <div class="details">
+        <div class="humi">
+          <i class='bx bx-water'></i>
+          <div class="text">
+            <span id="humidity">0%</span>
+            <p>Humidité</p>
+          </div>
+        </div>
+    
+        <div class="wind">
+          <i class='bx bx-wind'></i>
+          <div class="text">
+            <span id="windSpeed">0 km/h</span>
+            <p>Vitesse du vent</p>
+          </div>
+        </div>
+
+        </div>
+    
+    <div class="details_2">
+         
+    
+        <div class="pression">
+          <i class='bx bx-gauge'></i>
+          <div class="text">
+            <span id="pressure">0 hPa</span>
+            <p>Pression</p>
+          </div>
+        </div>
+    
+        <div class="ressenti">
+          <i class='bx bx-thermometer'></i>
+          <div class="text">
+            <span id="feelsLike">0°C</span>
+            <p>Ressenti</p>
+          </div>
+        </div>
+
+        
+    </div>
+      
+
+
+  </div>
+
+ 
+
+
+</section>
+  <div id="footer">
+    <p>Application météo</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
