@@ -8,7 +8,9 @@ const pressureEl = document.getElementById("pressure");
 const feelsLikeEl = document.getElementById("feelsLike");
 
 const detailsEl = document.querySelector(".details");
-detailsEl.style.display = "none";
+const detailsEl2 = document.querySelector(".details_2");
+
+
 
 const apiKey = "38ae77f3ed422e10059ac5429ee43ba9";
 
@@ -32,6 +34,10 @@ const weatherEmojis = {
 };
 
 btn.addEventListener("click", () => {
+
+    detailsEl.style.display = "flex";
+    detailsEl2.style.display = "flex";
+    meteoBox.style.display="flex"
     const ville = villeInput.value.trim();
     if (!ville) {
         meteoBox.innerHTML = "<p>Veuillez entrer une ville.</p>";
@@ -54,9 +60,11 @@ btn.addEventListener("click", () => {
 
             // عرض الطقس مع الصورة الكبيرة
             meteoBox.innerHTML = `
-                <h2>${data.name} (${data.sys.country})</h2>
-                <img src="${imgSrc}" alt="Weather Emoji" class="weather-img">
-                <p> ${Math.round(data.main.temp)}°C</p>
+                <h2>${data.name} (${data.sys.country}) </h2>
+                <div class="image_temp">
+                    <img src="${imgSrc}" alt="Weather Emoji" class="weather-img">
+                    <p> ${Math.round(data.main.temp)}°C</p>
+                </div>
                
             `;
 

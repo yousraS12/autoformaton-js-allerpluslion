@@ -1,0 +1,118 @@
+/* خلفية ناعمة وجميلة */
+body {
+    font-family: "Poppins", sans-serif;
+    background: rgb(212, 202, 167);
+    margin: 0;
+    padding: 0;
+    color: #f5f3f3;
+}
+
+/* العنوان الرئيسي */
+header {
+    text-align: center;
+    padding: 30px;
+}
+header h1 {
+    font-size: 2rem;
+    color: #590404;
+    text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}
+header p {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* البحث والفلاتر */
+.search-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.search-filter input,
+.search-filter select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* المنتجات */
+.product-grid, .products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 30px;
+    justify-items: stretch;
+    align-items: stretch;      /* important: make cells stretch */
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-auto-rows: 1fr;       /* make each row track equal height */
+}
+
+/* بطاقة المنتج */
+.product-card {
+    background: #590404;
+    border-radius: 12px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.1);
+    transition: transform .2s;
+
+    /* make every card fill the grid cell and align content */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-card:hover { transform: scale(1.03); }
+
+.product-card img {
+    width: 100%;
+    height: 160px;             /* fixed image box so cards stay same size */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    flex: 0 0 160px;          /* prevent image from stretching the card */
+}
+
+/* content area stretches to fill remaining space */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
+}
+
+/* الاسم + السعر */
+.product-card h3 {
+    margin: 10px 0;
+    color: rgb(212, 202, 167);
+}
+.product-card span {
+    font-weight: bold;
+    color: #f4ecec;
+}
+
+/* الفوتر */
+footer {
+    background: rgba(255,255,255,0.3);
+    color: #590404;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* responsive : ajuste le nombre de colonnes sur petits écrans */
+@media (max-width: 1100px) {
+    .product-grid, .products-container { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 800px) {
+    .product-grid, .products-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .product-grid, .products-container { grid-template-columns: 1fr; }
+}
